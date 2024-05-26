@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free fire website</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.contaner{
+    width: 100%;
+    height: 100vh;
+    background-image: url(freefire.jpg);
+    background-size:cover ;
+    background-position: center;
+}
+.contaner nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:7% ;
+    box-shadow: 2px 2px 30px;
+}
+.logo img{
+     width:230px;
+     margin-top: 12px;
+     padding-bottom:6px;
+     /* cursor: pointer; */
+}
+li{
+    list-style: none;
+    display: inline-block;
+    margin: 0px 23px;
+}
+ li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* transition: 0.2s; */
+
+}
+/* nav ul {
+    padding-right: 200px;
+    display: flex;
+    height: 70px;
+    justify-content: right;
+    height: 20px;
+    opacity: 0.8;
+} */
+li a:hover{
+    cursor: pointer;
+    color: red;
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 10px 25px;
+    border: 2px solid red;
+    border-radius: 25px;
+    box-shadow: 2px 2px 30px red;
+}
+.btn a:hover{
+    background: red;
+}
+.box{
+    /* background-color: rgb(121, 119, 119); */
+    opacity: 0.5px;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    box-shadow: 0 0 23px red;
+    /* align-items: center; */
+}
+.time-container{
+    display: flex;
+    gap: 1rem;
+}
+.a{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: white;
+    /* background-color: salmon; */
+}
+.bt a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 10px 25px;
+    border: 2px solid red;
+    border-radius: 25px;
+    box-shadow: 0 0 23px red;
+}
+
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <div class="contaner">
+        <nav>
+            <div class="logo">
+                <img src="logo.webp" alt="">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Character</a></li>
+                <li><a href="#">Esports</a></li>
+                <li><a href="#">Service</a></li>
+            </ul>
+            <div class="btn">
+                <a href="#">Download</a>
+            </div>
+        </nav> 
+        <div class="box">
+            <div class="time-container">
+                <div class="a hours" id="hours"></div>
+                <div class="a minutes" id="minutes"></div>
+                <div class="a seconds" id="second"></div>
+             </div>
+             <div class="bt">
+                <a href="#">Play</a>
+             </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function getTime() {
+    let time = new Date();
+    let hours = time.getHours();
+    let seconds = time.getSeconds();
+    let minutes = time.getMinutes();
+    let hoursEl = document.getElementById("hours");
+    hoursEl.innerHTML = hours;
+    let minutesEl = document.getElementById("minutes");
+    minutesEl.innerHTML = minutes;
+    let secondsEl = document.getElementById("seconds");
+    secondsEl.innerHTML = seconds;
+  
+    
+  }
+  
+  setInterval(() => {
+    getTime();
+  }, 1000);
+</script>
+</html>
